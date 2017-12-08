@@ -52,7 +52,7 @@ public class HeroTest {
   public void getId_heroesInstantiatesWithAnID_1() {
     Hero.clear();
     Hero testHero = new Hero("Superman",20,"Fly","Kryptonite");
-    assertEquals(1, testHero.getId();
+    assertEquals(1, testHero.getId());
   }
 
   @Test
