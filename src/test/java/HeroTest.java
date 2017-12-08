@@ -9,4 +9,10 @@ public class HeroTest {
     assertEquals(true, testHero instanceof Hero);
   }
 
+  @Test
+  public void Hero_instantiatesWithDescription_String() {
+    Hero testHero = new Hero("Superman");
+    assertEquals("Superman", testHero.getDescription());
+  }
+
 }
