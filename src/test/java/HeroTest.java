@@ -48,4 +48,11 @@ public class HeroTest {
     assertEquals(Hero.all().size(), 0);
   }
 
+  @Test
+  public void getId_heroesInstantiatesWithAnID_1() {
+    Hero.clear();
+    Hero testHero = new Hero("Superman",20,"Fly","Kryptonite");
+    assertEquals(1, testHero.getId();
+  }
+
 }
