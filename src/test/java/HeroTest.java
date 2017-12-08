@@ -34,11 +34,18 @@ public class HeroTest {
   // }
 
   @Test
-  public void all_returnsAllInstancesOftask_true() {
+  public void all_returnsAllInstancesOfHero_true() {
     Hero firstHero = new Hero("Superman",20,"Fly","Kryptonite");
     Hero secondHero = new Hero("Ironman",50,"Fly","Drinking");
     assertEquals(true, Hero.all().contains(firstHero));
     assertEquals(true, Hero.all().contains(secondHero));
+  }
+
+  @Test
+  public void clear_emptiesAllHeroesFromArrayList_0() {
+    Hero testHero = new Hero("Superman",20,"Fly","Kryptonite");
+    Hero.clear();
+    assertEquals(Hero.all().size(), 0);
   }
 
 }

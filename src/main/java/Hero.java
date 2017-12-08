@@ -37,5 +37,8 @@ public class Hero {
     return instances;
   }
 
+  public static void clear() {
+    instances.clear();
+  }
 
 }
