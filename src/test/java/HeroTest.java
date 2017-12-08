@@ -33,4 +33,12 @@ public class HeroTest {
   //   assertEquals("Kryptonite", testHero.getWeakness());
   // }
 
+  @Test
+  public void all_returnsAllInstancesOftask_true() {
+    Hero firstHero = new Hero("Superman",20,"Fly","Kryptonite");
+    Hero secondHero = new Hero("Ironman",50,"Fly","Drinking");
+    assertEquals(true, Hero.all().contains(firstHero));
+    assertEquals(true, Hero.all().contains(secondHero));
+  }
+
 }
