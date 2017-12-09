@@ -43,4 +43,19 @@ public class SquadTest {
     Squad secondSquad = new Squad("Superheros");
     assertEquals(Squad.find(secondSquad.getId()), secondSquad);
   }
+
+  @Test
+  public void getHeroes_initiallyReturnsEmptyList_ArrayList() {
+    Squad.clear();
+    Squad testSquad = new Squad("Feminists");
+    assertEquals(0, testSquad.getHeroes().size());
+  }
+
+  @Test
+  public void addHero_addsHeroToList_true() {
+    Squad testSquad = new Squad("Feminists");
+    Hero testHero = new Hero("Superman",20,"Fly","Kryptonite");
+    testSquad.addHero(testHero);
+    assertTrue(testSquad.getHeroes().contains(testHero));
+  }
 }
