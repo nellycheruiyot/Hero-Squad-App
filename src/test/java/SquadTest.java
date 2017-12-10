@@ -71,4 +71,12 @@ public class SquadTest {
     testSquad.addHero(testHero);
     assertTrue(testSquad.getHeroes().contains(testHero));
   }
+
+  @Test
+  public void heroAlreadyExists_checksIfHeroExistsinSquads_true() {
+    Squad testSquad = new Squad("Feminists",5,"Equality of sexes");
+    Hero testHero = new Hero("Superman",20,"Fly","Kryptonite");
+    testSquad.addHero(testHero);
+    assertTrue(testSquad.heroAlreadyExists(testHero));
+  }
 }

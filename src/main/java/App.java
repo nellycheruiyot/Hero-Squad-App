@@ -112,7 +112,17 @@ public class App {
       String weakness = request.queryParams("weakness");
       Hero newHero = new Hero(name, age, power, weakness);
 
-      squad.addHero(newHero);
+      if (Squad.heroAlreadyExists(newHero)) {
+        String heroExists = "Hero " + name + " already exists in a squad";
+        model.put("heroExists", heroExists);
+       }
+       else if (squad.getHeroes().size() >= squad.getSize()) {
+         String sizeMet = "Squad size already met";
+         model.put("sizeMet", sizeMet);
+       }
+       else{
+         squad.addHero(newHero);
+       }
 
       model.put("squad", squad);
       model.put("template", "templates/squad-heroes-success.vtl");
