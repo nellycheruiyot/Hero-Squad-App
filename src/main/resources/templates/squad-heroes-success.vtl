@@ -1,14 +1,19 @@
-#if ($heroExists)
-  <h1>Failed!</h1>
-  Your hero could not be saved. $heroExists.
-#else
-  #if($sizeMet)
-    <h1>Failed!</h1>
-    Your hero could not be saved. $sizeMet.
+<div class="jumbotron">
+  #if ($heroExists)
+    <h2 class="display-3">Failed!</h2>
+    <br>
+    Your hero could not be saved. $heroExists.
   #else
-    <h1>Success!</h1>
-    Your hero has been saved to the $squad.getName() squad.
+    #if($sizeMet)
+      <h2 class="display-3">Failed!</h2>
+      <br>
+      Your hero could not be saved. $sizeMet.
+    #else
+      <h2 class="display-3">Success!</h2>
+      <br>
+      Your hero has been saved to the $squad.getName() squad.
+    #end
   #end
-#end
-
-<a href="/squads">View squads</a>
+  <br><br>
+  <a href="/squads" class="btn btn-success">View squads</a>
+</div>
